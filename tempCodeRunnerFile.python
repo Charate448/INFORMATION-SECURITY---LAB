@@ -1,0 +1,25 @@
+CT = input("Enter your Encrypted Code: ")
+key = int(input("Enter your shift key: "))
+PT = ""
+
+for i in CT:
+    if i.isalpha():
+        # Handle uppercase letters
+        if i.isupper():
+            asc = ord(i) - key
+            if asc < ord('A'):
+                asc += 26
+            Pt = chr(asc)
+        # Handle lowercase letters
+        elif i.islower():
+            asc = ord(i) - key
+            if asc < ord('a'):
+                asc += 26
+            Pt = chr(asc)
+    else:
+        Pt = i  # Keeps spaces and symbols unchanged
+    
+    PT += Pt
+
+print("Decrypted Code:", PT)
+
