@@ -1,0 +1,58 @@
+Ct=input("Enter your Encrypted Code: ")
+PT=""
+
+for key in range (1,26):
+   PT=""
+   for i in Ct:
+    if i.isalpha():
+        if i.isupper():
+            asc= ord(i)-key
+            if asc < ord('A'):
+                asc += 26
+            Pt = chr(asc)
+        elif i.islower():
+            asc = ord(i) - key
+            if asc < ord('a'):
+                asc += 26
+            Pt = chr(asc)
+    else:
+        Pt = i
+    PT += Pt
+    
+
+
+print("Key ", key, ":", PT)
+
+
+
+
+Ct = input("Enter your Encrypted Code: ")
+
+for key in range(1, 26):
+    PT = ""
+
+    for i in Ct:
+        if i.isalpha():
+
+            if i.isupper():
+                asc = ord(i) - key
+
+                if asc < ord('A'):
+                    asc += 26
+
+                Pt = chr(asc)
+
+            elif i.islower():
+                asc = ord(i) - key
+
+                if asc < ord('a'):
+                    asc += 26
+
+                Pt = chr(asc)
+
+        else:
+            Pt = i
+
+        PT += Pt
+
+    print("Key", key, ":", PT)
